@@ -18,10 +18,12 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $fillable = [
+    protected $fillable = [ // untuk menentukan atribut mana yang dapat diisi secara massal, termasuk 'role' dan 'no_hp'
         'name',
         'email',
         'password',
+        'role',
+        'no_hp',
     ];
 
     /**
