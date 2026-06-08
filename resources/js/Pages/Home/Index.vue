@@ -39,7 +39,7 @@ const pengumuman = [
                 <div class="text-center text-white">
                     <h1 class="text-4xl md:text-5xl font-bold">
                         SELAMAT DATANG DI <br />
-                        DESA DESAAN
+                        DUKUH PLOSO
                     </h1>
                     <p class="mt-2">Kearifan Lokal, Masa Depan Cerah</p>
 
@@ -52,9 +52,9 @@ const pengumuman = [
             </div>
         </section>
 
-        <!-- TENTANG DESA -->
+        <!-- TENTANG DUKUH -->
         <section class="p-8 bg-white">
-            <h2 class="text-2xl font-bold text-center mb-6">TENTANG DESA</h2>
+            <h2 class="text-2xl font-bold text-center mb-6">TENTANG DUKUH</h2>
 
             <div class="grid md:grid-cols-2 gap-6 items-center">
                 <img
@@ -64,10 +64,10 @@ const pengumuman = [
 
                 <div>
                     <h3 class="text-xl font-bold mb-2">
-                        PROFIL DESA DESAAN
+                        PROFIL DUKUH PLOSO
                     </h3>
                     <p class="text-gray-600">
-                        Terletak di lembah pegunungan yang asri, Desa Desaan
+                        Terletak di lembah pegunungan yang asri, Dukuh Ploso
                         adalah komunitas yang ramah, menjunjung tinggi nilai
                         gotong royong, budaya lokal, dan berinovasi untuk
                         kesejahteraan bersama.
@@ -96,7 +96,7 @@ const pengumuman = [
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white rounded-lg"
                     >
-                        Kegiatan Desa
+                        Kegiatan Dukuh
                     </div>
                 </div>
             </div>
@@ -135,7 +135,7 @@ const pengumuman = [
 
                 <!-- INFO -->
                 <div class="space-y-4">
-                    <p><strong>Alamat:</strong> Desa Desaan</p>
+                    <p><strong>Alamat:</strong>Dukuh Ploso, Kelurahan Petir, Kecamatan Rongkop, Kabupaten Gunungkidul, Yogyakarta</p>
                     <p><strong>Telepon:</strong> 0812-3456-7890</p>
                     <p><strong>Email:</strong> desa@email.com</p>
                 </div>
