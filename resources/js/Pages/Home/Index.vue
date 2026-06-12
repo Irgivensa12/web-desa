@@ -1,27 +1,5 @@
 <script setup>
 import MainLayout from "@/Layouts/MainLayout.vue";
-
-// sementara dummy data (nanti diganti dari database)
-const pengumuman = [
-    {
-        id: 1,
-        judul: "Musyawarah Desa",
-        isi: "Musrenbangdes 2024",
-        tanggal: "15 Des 2023", 
-    },
-    {
-        id: 2,
-        judul: "Gotong Royong",
-        isi: "Kebersihan Dusun",
-        tanggal: "20 Des 2023",
-    },
-    {
-        id: 3,
-        judul: "Pesta Rakyat",
-        isi: "Pasar Kuliner Desa",
-        tanggal: "30 Des 2023",
-    },
-];
 </script>
 
 <template>
@@ -63,9 +41,7 @@ const pengumuman = [
                 />
 
                 <div>
-                    <h3 class="text-xl font-bold mb-2">
-                        PROFIL DUKUH PLOSO
-                    </h3>
+                    <h3 class="text-xl font-bold mb-2">PROFIL DUKUH PLOSO</h3>
                     <p class="text-gray-600">
                         Terletak di lembah pegunungan yang asri, Dukuh Ploso
                         adalah komunitas yang ramah, menjunjung tinggi nilai
@@ -78,6 +54,38 @@ const pengumuman = [
                     >
                         Read More
                     </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PETA WILAYAH -->
+        <section class="p-8 bg-gray-100">
+            <h2 class="text-2xl font-bold text-center mb-8">
+                PETA WILAYAH DESA PETIR
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <img
+                    src="/images/peta-petir.jpg"
+                    alt="Peta Desa Petir"
+                    class="w-full rounded-lg shadow-lg"
+                />
+
+                <div>
+                    <h3 class="text-xl font-bold mb-3">Letak Administratif</h3>
+
+                    <p class="text-gray-600 mb-4">
+                        Desa Petir merupakan salah satu desa di Kecamatan
+                        Rongkop, Kabupaten Gunungkidul, Daerah Istimewa
+                        Yogyakarta.
+                    </p>
+
+                    <ul class="space-y-2 text-gray-700">
+                        <li>📍 Kecamatan : Rongkop</li>
+                        <li>📍 Kabupaten : Gunungkidul</li>
+                        <li>📍 Provinsi : DI Yogyakarta</li>
+                        <li>📍 Dusun : Ploso, Dadapan, Watumengku, dll.</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -102,25 +110,6 @@ const pengumuman = [
             </div>
         </section>
 
-        <!-- PENGUMUMAN -->
-        <section class="p-8 bg-white">
-            <h2 class="text-2xl font-bold text-center mb-6">
-                PENGUMUMAN & KEGIATAN
-            </h2>
-
-            <div class="grid md:grid-cols-3 gap-4">
-                <div
-                    v-for="item in pengumuman"
-                    :key="item.id"
-                    class="p-4 shadow rounded-lg bg-gray-50"
-                >
-                    <h3 class="font-bold">{{ item.judul }}</h3>
-                    <p class="text-gray-600 text-sm">{{ item.isi }}</p>
-                    <p class="text-xs mt-2 text-gray-400">{{ item.tanggal }}</p>
-                </div>
-            </div>
-        </section>
-
         <!-- KONTAK -->
         <section class="p-8 bg-gray-100">
             <h2 class="text-2xl font-bold text-center mb-6">HUBUNGI KAMI</h2>
@@ -135,7 +124,7 @@ const pengumuman = [
 
                 <!-- INFO -->
                 <div class="space-y-4">
-                    <p><strong>Alamat:</strong>Dukuh Ploso, Kelurahan Petir, Kecamatan Rongkop, Kabupaten Gunungkidul, Yogyakarta</p>
+                    <p><strong>Alamat:</strong>Dukuh Ploso</p>
                     <p><strong>Telepon:</strong> 0812-3456-7890</p>
                     <p><strong>Email:</strong> desa@email.com</p>
                 </div>
