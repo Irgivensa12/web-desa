@@ -58,10 +58,10 @@ import MainLayout from "@/Layouts/MainLayout.vue";
             </div>
         </section>
 
-        <!-- PETA WILAYAH -->
+        <!-- POTENSI DUKUH -->
         <section class="p-8 bg-gray-100">
             <h2 class="text-2xl font-bold text-center mb-8">
-                PETA WILAYAH DESA PETIR
+                POTENSI DUKUH PLOSO
             </h2>
 
             <div class="grid md:grid-cols-2 gap-8 items-center">
@@ -72,20 +72,11 @@ import MainLayout from "@/Layouts/MainLayout.vue";
                 />
 
                 <div>
-                    <h3 class="text-xl font-bold mb-3">Letak Administratif</h3>
-
                     <p class="text-gray-600 mb-4">
-                        Desa Petir merupakan salah satu desa di Kecamatan
-                        Rongkop, Kabupaten Gunungkidul, Daerah Istimewa
-                        Yogyakarta.
+                        Dukuh Ploso Masyarakatnya mayoritas adalah petani dan peternak
+                        Sehingga membuat dukuh ini memiliki potensi yang besar dalam bidang pertanian dan peternakan. 
+                        Dukuh Ploso juga memiliki keindahan alam yang menawan, dengan pemandangan pegunungan dan sawah yang hijau.
                     </p>
-
-                    <ul class="space-y-2 text-gray-700">
-                        <li>📍 Kecamatan : Rongkop</li>
-                        <li>📍 Kabupaten : Gunungkidul</li>
-                        <li>📍 Provinsi : DI Yogyakarta</li>
-                        <li>📍 Dusun : Ploso, Dadapan, Watumengku, dll.</li>
-                    </ul>
                 </div>
             </div>
         </section>
@@ -104,7 +95,7 @@ import MainLayout from "@/Layouts/MainLayout.vue";
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white rounded-lg"
                     >
-                        Kegiatan Dukuh
+                        Dokumentasi Padukuhan
                     </div>
                 </div>
             </div>
@@ -117,16 +108,25 @@ import MainLayout from "@/Layouts/MainLayout.vue";
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- MAP -->
                 <iframe
-                    class="w-full h-[300px] rounded-lg"
-                    src="https://maps.google.com/maps?q=jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                >
-                </iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31601.28800050715!2d110.72926455!3d-8.085057950000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7bc83dc2e20195%3A0xbfb08c5edaa5331b!2sPetir%2C%20Kec.%20Rongkop%2C%20Kabupaten%20Gunungkidul%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1782266054271!5m2!1sid!2sid"
+                    width="600"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                ></iframe>
 
                 <!-- INFO -->
                 <div class="space-y-4">
-                    <p><strong>Alamat:</strong>Dukuh Ploso</p>
-                    <p><strong>Telepon:</strong> 0812-3456-7890</p>
-                    <p><strong>Email:</strong> desa@email.com</p>
+                    <p><strong>Alamat:</strong></p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>📍 Dukuh : Ploso</li>
+                        <li>📍 Kecamatan : Rongkop</li>
+                        <li>📍 Kabupaten : Gunungkidul</li>
+                        <li>📍 Provinsi : Daerah Istimewa Yogyakarta</li>
+                    </ul>
+                    <p><strong>Telepon:</strong> 0821-3973-9848</p>
                 </div>
             </div>
         </section>

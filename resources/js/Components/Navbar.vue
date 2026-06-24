@@ -47,7 +47,7 @@ const showProfileMenu = ref(false);
                 </div>
             </div>
 
-            <a href="/login" class="hover:text-green-600"> Login Admin </a>
+            <a href="/visi-misi" class="hover:text-green-600"> Visi Misi </a>
         </div>
     </nav>
 </template>
