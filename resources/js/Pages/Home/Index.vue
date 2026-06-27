@@ -1,5 +1,13 @@
 <script setup>
 import MainLayout from "@/Layouts/MainLayout.vue";
+import {
+    Wheat,
+    Beef,
+    Mountain,
+    Handshake,
+    Phone,
+    MapPin,
+} from "lucide-vue-next";
 </script>
 
 <template>
@@ -19,21 +27,16 @@ import MainLayout from "@/Layouts/MainLayout.vue";
                         SELAMAT DATANG DI <br />
                         DUKUH PLOSO
                     </h1>
-                    <p class="mt-2">Kearifan Lokal, Masa Depan Cerah</p>
-
-                    <button
-                        class="mt-4 bg-green-500 px-6 py-2 rounded-full hover:bg-green-600"
-                    >
-                        Jelajahi Desa
-                    </button>
+                    <p class="mt-2">Guyub Makarya, Maju Bebarengan</p>
                 </div>
             </div>
         </section>
 
         <!-- TENTANG DUKUH -->
         <section class="p-8 bg-white">
-            <h2 class="text-2xl font-bold text-center mb-6">TENTANG DUKUH</h2>
-
+            <h2 class="text-4xl font-bold text-center text-green-700 mb-8">
+                Tentang Dukuh Ploso
+            </h2>
             <div class="grid md:grid-cols-2 gap-6 items-center">
                 <img
                     src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
@@ -58,32 +61,208 @@ import MainLayout from "@/Layouts/MainLayout.vue";
             </div>
         </section>
 
+        <!-- SEJARAH DUKUH -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-green-700">
+                    Sejarah Dukuh Ploso
+                </h2>
+
+                <p class="text-center text-gray-500 mt-3 max-w-3xl mx-auto">
+                    Perjalanan panjang Dukuh Ploso dari pembukaan hutan hingga
+                    menjadi wilayah yang berkembang seperti saat ini.
+                </p>
+
+                <div class="mt-16 relative">
+                    <!-- Garis -->
+                    <div
+                        class="absolute left-1/2 top-0 bottom-0 w-1 bg-green-200 transform -translate-x-1/2"
+                    ></div>
+
+                    <!-- Timeline -->
+                    <div class="space-y-14">
+                        <div class="flex items-center">
+                            <div class="w-1/2 text-right pr-10">
+                                <h3 class="font-bold text-xl">Tahun 1930-an</h3>
+
+                                <p class="text-gray-600 mt-2">
+                                    Mbah Pawirorejo menjadi kepala dukuh pada
+                                    masa penjajahan Belanda.
+                                </p>
+                            </div>
+
+                            <div
+                                class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center z-10"
+                            >
+                                🌳
+                            </div>
+
+                            <div class="w-1/2"></div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-1/2"></div>
+
+                            <div
+                                class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center z-10"
+                            >
+                                🪓
+                            </div>
+
+                            <div class="w-1/2 pl-10">
+                                <h3 class="font-bold text-xl">
+                                    Pembukaan Hutan
+                                </h3>
+
+                                <p class="text-gray-600 mt-2">
+                                    Masyarakat mulai membuka hutan untuk
+                                    dijadikan permukiman dan lahan pertanian.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-1/2 text-right pr-10">
+                                <h3 class="font-bold text-xl">Nama Dukuh</h3>
+
+                                <p class="text-gray-600 mt-2">
+                                    Nama Ploso diambil dari pohon Ploso yang
+                                    banyak tumbuh di wilayah tersebut.
+                                </p>
+                            </div>
+
+                            <div
+                                class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center z-10"
+                            >
+                                🌲
+                            </div>
+
+                            <div class="w-1/2"></div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-1/2"></div>
+
+                            <div
+                                class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center z-10"
+                            >
+                                🏡
+                            </div>
+
+                            <div class="w-1/2 pl-10">
+                                <h3 class="font-bold text-xl">
+                                    Dukuh Saat Ini
+                                </h3>
+
+                                <p class="text-gray-600 mt-2">
+                                    Kepala dukuh saat ini adalah Pak Sumardi
+                                    Hadi Pramono. Dukuh Ploso berkembang menjadi
+                                    wilayah yang menjunjung tinggi gotong royong
+                                    serta menjadi kawasan pertanian dan
+                                    peternakan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- POTENSI DUKUH -->
-        <section class="p-8 bg-gray-100">
-            <h2 class="text-2xl font-bold text-center mb-8">
-                POTENSI DUKUH PLOSO
-            </h2>
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-green-700">
+                    Potensi Dukuh Ploso
+                </h2>
 
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <img
-                    src="/images/peta-petir.jpg"
-                    alt="Peta Desa Petir"
-                    class="w-full rounded-lg shadow-lg"
-                />
+                <p class="text-center text-gray-500 mt-3 mb-14">
+                    Berbagai potensi yang dimiliki Dukuh Ploso sebagai
+                    usaha-usaha untuk meningkatkan kesejahteraan masyarakat dan
+                    mendukung pembangunan masyarakat.
+                </p>
 
-                <div>
-                    <p class="text-gray-600 mb-4">
-                        Dukuh Ploso Masyarakatnya mayoritas adalah petani dan peternak
-                        Sehingga membuat dukuh ini memiliki potensi yang besar dalam bidang pertanian dan peternakan. 
-                        Dukuh Ploso juga memiliki keindahan alam yang menawan, dengan pemandangan pegunungan dan sawah yang hijau.
-                    </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div
+                        class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition"
+                    >
+                        <div class="text-5xl mb-5">
+                            <Wheat
+                                :size="48"
+                                class="mx-auto text-yellow-600 mb-4"
+                            />
+                        </div>
+
+                        <h3 class="font-bold text-xl mb-3">Pertanian</h3>
+
+                        <p class="text-gray-600">
+                            Mayoritas masyarakat bekerja sebagai petani dengan
+                            berbagai hasil pertanian yang menjadi sumber
+                            penghidupan utama.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition"
+                    >
+                        <div class="text-5xl mb-5">
+                            <Beef
+                                :size="48"
+                                class="mx-auto text-red-800 mb-4"
+                            />
+                        </div>
+
+                        <h3 class="font-bold text-xl mb-3">Peternakan</h3>
+
+                        <p class="text-gray-600">
+                            Sebagian Masyarakat juga memilliki hewan ternak
+                            sebagai penunjang ekonomi keluarga.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition"
+                    >
+                        <div class="text-5xl mb-5">
+                            <Mountain
+                                :size="48"
+                                class="mx-auto text-green-500 mb-4"
+                            />
+                        </div>
+
+                        <h3 class="font-bold text-xl mb-3">Alam</h3>
+
+                        <p class="text-gray-600">
+                            Dikelilingi pemandangan pegunungan dan hamparan
+                            sawah yang memberikan suasana asri dan sejuk.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition"
+                    >
+                        <div class="text-5xl mb-5">
+                            <Handshake
+                                :size="48"
+                                class="mx-auto text-blue-600 mb-4"
+                            />
+                        </div>
+
+                        <h3 class="font-bold text-xl mb-3">Gotong Royong</h3>
+
+                        <p class="text-gray-600">
+                            Nilai kebersamaan dan gotong royong masih menjadi
+                            budaya yang terus dijaga oleh masyarakat.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- GALERI -->
         <section class="p-8 bg-gray-100">
-            <h2 class="text-2xl font-bold text-center mb-6">GALERI DESA</h2>
+            <h2 class="text-4xl font-bold text-center text-green-700 mb-8">
+                Galeri Dukuh Ploso
+            </h2>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div v-for="i in 6" :key="i" class="relative group">
@@ -103,7 +282,9 @@ import MainLayout from "@/Layouts/MainLayout.vue";
 
         <!-- KONTAK -->
         <section class="p-8 bg-gray-100">
-            <h2 class="text-2xl font-bold text-center mb-6">HUBUNGI KAMI</h2>
+            <h2 class="text-4xl font-bold text-center text-green-700 mb-8">
+                Hubungi Kami
+            </h2>
 
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- MAP -->
@@ -118,15 +299,81 @@ import MainLayout from "@/Layouts/MainLayout.vue";
                 ></iframe>
 
                 <!-- INFO -->
-                <div class="space-y-4">
-                    <p><strong>Alamat:</strong></p>
-                    <ul class="space-y-2 text-gray-700">
-                        <li>📍 Dukuh : Ploso</li>
-                        <li>📍 Kecamatan : Rongkop</li>
-                        <li>📍 Kabupaten : Gunungkidul</li>
-                        <li>📍 Provinsi : Daerah Istimewa Yogyakarta</li>
-                    </ul>
-                    <p><strong>Telepon:</strong> 0821-3973-9848</p>
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-gray-800">
+                        Informasi Lokasi
+                    </h3>
+
+                    <div class="space-y-4">
+                        <!-- Dukuh -->
+                        <div class="flex items-center gap-3">
+                            <MapPin
+                                :size="22"
+                                class="text-red-600 flex-shrink-0"
+                            />
+
+                            <div>
+                                <p class="font-semibold">Dukuh</p>
+                                <p class="text-gray-600">Ploso</p>
+                            </div>
+                        </div>
+
+                        <!-- Kecamatan -->
+                        <div class="flex items-center gap-3">
+                            <MapPin
+                                :size="22"
+                                class="text-red-600 flex-shrink-0"
+                            />
+
+                            <div>
+                                <p class="font-semibold">Kecamatan</p>
+                                <p class="text-gray-600">Rongkop</p>
+                            </div>
+                        </div>
+
+                        <!-- Kabupaten -->
+                        <div class="flex items-center gap-3">
+                            <MapPin
+                                :size="22"
+                                class="text-red-600 flex-shrink-0"
+                            />
+
+                            <div>
+                                <p class="font-semibold">Kabupaten</p>
+                                <p class="text-gray-600">Gunungkidul</p>
+                            </div>
+                        </div>
+
+                        <!-- Provinsi -->
+                        <div class="flex items-center gap-3">
+                            <MapPin
+                                :size="22"
+                                class="text-red-600 flex-shrink-0"
+                            />
+
+                            <div>
+                                <p class="font-semibold">Provinsi</p>
+                                <p class="text-gray-600">
+                                    Daerah Istimewa Yogyakarta
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Telepon -->
+                        <div class="flex items-center gap-3 pt-3 border-t">
+                            <Phone
+                                :size="22"
+                                class="text-blue-600 flex-shrink-0"
+                            />
+
+                            <div>
+                                <p class="font-semibold">Telepon</p>
+                                <p class="text-gray-600">
+                                    0821-3973-9848 (Bu Lilis Dukuh)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
