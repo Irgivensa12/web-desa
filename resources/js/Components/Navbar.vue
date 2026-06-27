@@ -25,6 +25,13 @@ const showProfileMenu = ref(false);
                     class="absolute left-0 mt-2 w-56 bg-red-500 rounded-lg shadow-lg z-50"
                 >
                     <a
+                        href="/visiMisi"
+                        class="block px-4 py-2 hover:bg-red-600 text-white"
+                    >
+                        Visi Misi
+                    </a>
+
+                    <a
                         href="/monografi"
                         class="block px-4 py-2 hover:bg-red-600 text-white"
                     >
@@ -37,17 +44,12 @@ const showProfileMenu = ref(false);
                     >
                         Struktur Organisasi
                     </a>
-
-                    <a
-                        href="/sejarah"
-                        class="block px-4 py-2 hover:bg-red-600 text-white"
-                    >
-                        Sejarah Desa
-                    </a>
                 </div>
             </div>
 
-            <a href="/visi-misi" class="hover:text-green-600"> Visi Misi </a>
+            <a href="/#sejarah" class="hover:text-green-600"> Sejarah Dukuh</a>
+            <a href="/#potensi" class="hover:text-green-600"> Potensi Dukuh </a>
+            <a href="/#galeri" class="hover:text-green-600"> Galeri Dukuh </a>
         </div>
     </nav>
 </template>

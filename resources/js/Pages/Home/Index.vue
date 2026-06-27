@@ -34,7 +34,7 @@ import {
 
         <!-- TENTANG DUKUH -->
         <section class="p-8 bg-white">
-            <h2 class="text-4xl font-bold text-center text-green-700 mb-8">
+            <h2 class=" text-4xl font-bold text-center text-green-700 mb-8">
                 Tentang Dukuh Ploso
             </h2>
             <div class="grid md:grid-cols-2 gap-6 items-center">
@@ -46,10 +46,21 @@ import {
                 <div>
                     <h3 class="text-xl font-bold mb-2">PROFIL DUKUH PLOSO</h3>
                     <p class="text-gray-600">
-                        Terletak di lembah pegunungan yang asri, Dukuh Ploso
-                        adalah komunitas yang ramah, menjunjung tinggi nilai
-                        gotong royong, budaya lokal, dan berinovasi untuk
-                        kesejahteraan bersama.
+                        Padukuhan Ploso merupakan salah satu padukuhan yang
+                        berada di bagian barat daya wilayah Desa Semugih dan
+                        berbatasan dengan Desa Pringombo serta Desa Petir. Sejak
+                        pemerintahan desa pertama pada masa Lurah R. Mangun
+                        Atmojo, jabatan Kepala Dukuh di Padukuhan Ploso pernah
+                        dipegang oleh Ki Atmo Soyo, Ki Warso, dan Ki Saqri
+                        Amsori. Kepala Dukuh pertama hingga kedua diangkat
+                        langsung oleh Lurah, sedangkan pada masa Ki Saqri Amsori
+                        proses pengisian jabatan dilakukan melalui pemilihan
+                        langsung oleh masyarakat. Padukuhan Ploso memiliki
+                        berbagai kesenian tradisional yang terus dilestarikan,
+                        di antaranya Srandul, Jatilan, dan Samroh. Adapun Balai
+                        Padukuhan menjadi pusat kegiatan masyarakat sebagai
+                        tempat pertemuan, musyawarah, dan berbagai kegiatan
+                        kemasyarakatan.
                     </p>
 
                     <button
@@ -62,7 +73,7 @@ import {
         </section>
 
         <!-- SEJARAH DUKUH -->
-        <section class="py-20 bg-gray-50">
+        <section class="py-20 bg-gray-50 " id="sejarah">
             <div class="max-w-6xl mx-auto px-6">
                 <h2 class="text-4xl font-bold text-center text-green-700">
                     Sejarah Dukuh Ploso
@@ -126,7 +137,7 @@ import {
                                 <h3 class="font-bold text-xl">Nama Dukuh</h3>
 
                                 <p class="text-gray-600 mt-2">
-                                    Nama Ploso diambil dari pohon Ploso yang
+                                    Nama Ploso diambil dari Pohon Ploso yang
                                     banyak tumbuh di wilayah tersebut.
                                 </p>
                             </div>
@@ -169,7 +180,7 @@ import {
         </section>
 
         <!-- POTENSI DUKUH -->
-        <section class="py-20 bg-white">
+        <section class="py-20 bg-white" id="potensi">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-4xl font-bold text-center text-green-700">
                     Potensi Dukuh Ploso
@@ -259,7 +270,7 @@ import {
         </section>
 
         <!-- GALERI -->
-        <section class="p-8 bg-gray-100">
+        <section class="p-8 bg-gray-100" id="galeri">
             <h2 class="text-4xl font-bold text-center text-green-700 mb-8">
                 Galeri Dukuh Ploso
             </h2>
@@ -317,6 +328,18 @@ import {
                                 <p class="text-gray-600">Ploso</p>
                             </div>
                         </div>
+                        <!-- Kalurahan -->
+                        <div class="flex items-center gap-3">
+                            <MapPin
+                                :size="22"
+                                class="text-red-600 flex-shrink-0"
+                            />
+
+                            <div>
+                                <p class="font-semibold">Kalurahan</p>
+                                <p class="text-gray-600">Semugih</p>
+                            </div>
+                        </div>
 
                         <!-- Kecamatan -->
                         <div class="flex items-center gap-3">
@@ -326,7 +349,7 @@ import {
                             />
 
                             <div>
-                                <p class="font-semibold">Kecamatan</p>
+                                <p class="font-semibold">Kapanewon/Kecamatan</p>
                                 <p class="text-gray-600">Rongkop</p>
                             </div>
                         </div>
@@ -369,7 +392,7 @@ import {
                             <div>
                                 <p class="font-semibold">Telepon</p>
                                 <p class="text-gray-600">
-                                    0821-3973-9848 (Bu Lilis Dukuh)
+                                    0823-2614-4210 (Pak Sumardi Dukuh)
                                 </p>
                             </div>
                         </div>
