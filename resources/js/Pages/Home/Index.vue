@@ -8,6 +8,57 @@ import {
     Phone,
     MapPin,
 } from "lucide-vue-next";
+import { ref } from "vue";
+const showRT = ref(false);
+
+const openedRT = ref(null);
+
+const toggleRT = (nomor) => {
+    if (openedRT.value === nomor) {
+        openedRT.value = null;
+    } else {
+        openedRT.value = nomor;
+    }
+};
+
+const daftarRT = [
+    {
+        nomor: "RT 09",
+        ketua: "Bpk. Gandung Purwanto",
+        kk: 22,
+        deskripsi:
+            "Mayoritas masyarakat bekerja sebagai petani padi dan peternak kambing.",
+        foto: "/images/rt/rt1.jpg",
+        show: false,
+    },
+    {
+        nomor: "RT 10",
+        ketua: "Bpk. Jaka Triana",
+        kk: 21,
+        deskripsi:
+            "Mayoritas masyarakat bekerja sebagai petani padi dan peternak kambing.",
+        foto: "/images/rt/rt2.jpg",
+        show: false,
+    },
+    {
+        nomor: "RT 11",
+        ketua: "Bpk. Ali Bertus",
+        kk: 24,
+        deskripsi:
+            "Mayoritas masyarakat bekerja sebagai petani padi dan peternak kambing.",
+        foto: "/images/rt/rt3.jpg",
+        show: false,
+    },
+    {
+        nomor: "RT 12",
+        ketua: "Bpk. Muncar",
+        kk: 23,
+        deskripsi:
+            "Mayoritas masyarakat bekerja sebagai petani padi dan peternak kambing.",
+        foto: "/images/rt/rt4.jpg",
+        show: false,
+    },
+];
 </script>
 
 <template>
@@ -32,48 +83,146 @@ import {
             </div>
         </section>
 
-        <!-- TENTANG DUKUH -->
-        <section class="p-8 bg-white">
-            <h2 class=" text-4xl font-bold text-center text-green-700 mb-8">
-                Tentang Dukuh Ploso
-            </h2>
-            <div class="grid md:grid-cols-2 gap-6 items-center">
-                <img
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-                    class="rounded-lg shadow"
-                />
+        <!-- Populasi Penduduk -->
+        <section class="py-20 bg-green-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-green-700">
+                    Populasi Penduduk
+                </h2>
 
-                <div>
-                    <h3 class="text-xl font-bold mb-2">PROFIL DUKUH PLOSO</h3>
-                    <p class="text-gray-600">
-                        Padukuhan Ploso merupakan salah satu padukuhan yang
-                        berada di bagian barat daya wilayah Desa Semugih dan
-                        berbatasan dengan Desa Pringombo serta Desa Petir. Sejak
-                        pemerintahan desa pertama pada masa Lurah R. Mangun
-                        Atmojo, jabatan Kepala Dukuh di Padukuhan Ploso pernah
-                        dipegang oleh Ki Atmo Soyo, Ki Warso, dan Ki Saqri
-                        Amsori. Kepala Dukuh pertama hingga kedua diangkat
-                        langsung oleh Lurah, sedangkan pada masa Ki Saqri Amsori
-                        proses pengisian jabatan dilakukan melalui pemilihan
-                        langsung oleh masyarakat. Padukuhan Ploso memiliki
-                        berbagai kesenian tradisional yang terus dilestarikan,
-                        di antaranya Srandul, Jatilan, dan Samroh. Adapun Balai
-                        Padukuhan menjadi pusat kegiatan masyarakat sebagai
-                        tempat pertemuan, musyawarah, dan berbagai kegiatan
-                        kemasyarakatan.
-                    </p>
+                <p class="text-center text-gray-600 mt-3 mb-12">
+                    Data jumlah penduduk, kepala keluarga, dan rukun tetangga di
+                    Dukuh Ploso
+                </p>
 
-                    <button
-                        class="mt-4 bg-green-500 text-white px-4 py-2 rounded"
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                    <!-- Penduduk -->
+                    <div
+                        class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl hover:-translate-y-2 transition duration-300"
                     >
-                        Read More
-                    </button>
+                        <Users :size="50" class="mx-auto text-blue-600 mb-4" />
+
+                        <h3 class="font-bold text-lg">Penduduk</h3>
+
+                        <p class="text-3xl font-bold text-green-700 mt-3">
+                            331
+                        </p>
+
+                        <p class="text-gray-500">Jiwa</p>
+                    </div>
+
+                    <!-- KK -->
+                    <div
+                        class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl hover:-translate-y-2 transition duration-300"
+                    >
+                        <House
+                            :size="50"
+                            class="mx-auto text-orange-500 mb-4"
+                        />
+
+                        <h3 class="font-bold text-lg">Kepala Keluarga</h3>
+
+                        <p class="text-3xl font-bold text-green-700 mt-3">90</p>
+
+                        <p class="text-gray-500">KK</p>
+                    </div>
+
+                    <!-- RT -->
+                    <div
+                        @click="showRT = !showRT"
+                        class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl hover:-translate-y-2 transition duration-300 cursor-pointer"
+                    >
+                        <MapPinned
+                            :size="50"
+                            class="mx-auto text-red-600 mb-4"
+                        />
+
+                        <h3 class="font-bold text-lg">RT</h3>
+
+                        <p class="text-3xl font-bold text-green-700 mt-3">
+                            {{ daftarRT.length }}
+                        </p>
+
+                        <p class="text-gray-500">Rukun Tetangga</p>
+
+                        <div
+                            class="flex justify-center items-center mt-4 text-green-700 font-semibold gap-2"
+                        >
+                            <span>
+                                {{
+                                    showRT ? "Sembunyikan Detail" : "Lihat Detail"
+                                }}
+                            </span>
+
+                            <ChevronUp v-if="showRT" :size="18" />
+
+                            <ChevronDown v-else :size="18" />
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+            <transition name="fade">
+                <div v-if="showRT" class="mt-10">
+                    <h3
+                        class="text-3xl font-bold text-center text-green-700 mb-8"
+                    >
+                        Profil Rukun Tetangga
+                    </h3>
 
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div
+                            v-for="rt in daftarRT"
+                            :key="rt.nomor"
+                            class="bg-white rounded-xl shadow-lg overflow-hidden"
+                        >
+                            <img
+                                :src="rt.foto"
+                                class="w-full h-52 object-cover"
+                            />
+
+                            <div class="p-5">
+                                <h4 class="font-bold text-xl">
+                                    {{ rt.nomor }}
+                                </h4>
+
+                                <p class="text-gray-600">
+                                    Ketua RT : {{ rt.ketua }}
+                                </p>
+
+                                <p class="text-green-700 font-semibold mt-1">
+                                    {{ rt.kk }} KK
+                                </p>
+
+                                <button
+                                    @click.stop="console.log(rt.nomor)"
+                                    class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
+                                >
+                                    {{
+                                        openedRT === rt.nomor
+                                            ? "Tutup Profil"
+                                            : "Lihat Profil"
+                                    }}
+                                </button>
+                                <transition name="fade">
+                                    <div
+                                        v-if="openedRT === rt.nomor"
+                                        class="mt-4 border-t pt-4"
+                                    >
+                                        <p class="text-gray-600">
+                                            {{ rt.deskripsi }}
+                                        </p>
+                                    </div>
+                                </transition>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </transition>
+        </section>
         <!-- SEJARAH DUKUH -->
-        <section class="py-20 bg-gray-50 " id="sejarah">
+        <section class="py-20 bg-gray-50" id="sejarah">
             <div class="max-w-6xl mx-auto px-6">
                 <h2 class="text-4xl font-bold text-center text-green-700">
                     Sejarah Dukuh Ploso
@@ -137,7 +286,7 @@ import {
                                 <h3 class="font-bold text-xl">Nama Dukuh</h3>
 
                                 <p class="text-gray-600 mt-2">
-                                    Nama Ploso diambil dari Pohon Ploso yang
+                                    Nama Ploso diambil dari "Pohon Ploso" yang
                                     banyak tumbuh di wilayah tersebut.
                                 </p>
                             </div>
@@ -198,7 +347,7 @@ import {
                     >
                         <div class="text-5xl mb-5">
                             <Wheat
-                                :size="48"
+                                :size="50"
                                 class="mx-auto text-yellow-600 mb-4"
                             />
                         </div>
@@ -207,8 +356,7 @@ import {
 
                         <p class="text-gray-600">
                             Mayoritas masyarakat bekerja sebagai petani dengan
-                            berbagai hasil pertanian yang menjadi sumber
-                            penghidupan utama.
+                            berbagai hasil pertanian seperti padi, jagung, umbi-umbian, dan sayuran.
                         </p>
                     </div>
 
@@ -217,7 +365,7 @@ import {
                     >
                         <div class="text-5xl mb-5">
                             <Beef
-                                :size="48"
+                                :size="50"
                                 class="mx-auto text-red-800 mb-4"
                             />
                         </div>
@@ -225,8 +373,8 @@ import {
                         <h3 class="font-bold text-xl mb-3">Peternakan</h3>
 
                         <p class="text-gray-600">
-                            Sebagian Masyarakat juga memilliki hewan ternak
-                            sebagai penunjang ekonomi keluarga.
+                            Sebagian Masyarakat juga memiliki hewan ternak
+                            seperti ayam, sapi, kambing, angsa dan lain-lain.
                         </p>
                     </div>
 
@@ -244,7 +392,7 @@ import {
 
                         <p class="text-gray-600">
                             Dikelilingi pemandangan pegunungan dan hamparan
-                            sawah yang memberikan suasana asri dan sejuk.
+                            sawah dan perkebunan yang membuat suasana menjadi asri dan sejuk.
                         </p>
                     </div>
 
@@ -300,7 +448,7 @@ import {
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- MAP -->
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31601.28800050715!2d110.72926455!3d-8.085057950000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7bc83dc2e20195%3A0xbfb08c5edaa5331b!2sPetir%2C%20Kec.%20Rongkop%2C%20Kabupaten%20Gunungkidul%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1782266054271!5m2!1sid!2sid"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d323.3053385715823!2d110.72009190721303!3d-8.067439704846572!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7bc9dbe4b6fde3%3A0xb4011ecee263e528!2sBalai%20Dusun%20Ploso!5e1!3m2!1sen!2sid!4v1783238094107!5m2!1sen!2sid"
                     width="600"
                     height="450"
                     style="border: 0"
@@ -337,7 +485,7 @@ import {
 
                             <div>
                                 <p class="font-semibold">Kalurahan</p>
-                                <p class="text-gray-600">Semugih</p>
+                                <p class="text-gray-600">Petir</p>
                             </div>
                         </div>
 
@@ -402,3 +550,15 @@ import {
         </section>
     </MainLayout>
 </template>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+</style>

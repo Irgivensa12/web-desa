@@ -6,7 +6,7 @@ const showProfileMenu = ref(false);
 
 <template>
     <nav class="bg-green-700 text-white px-6 py-4 flex justify-between">
-        <h1 class="font-bold">Dukuh Ploso</h1>
+        <img src="images/Logo KKN 114.png" alt="KKN 114" class="h-12 w-auto mr-3" />
 
         <div class="flex items-center space-x-6">
             <a href="/" class="hover:text-green-600"> Beranda </a>
