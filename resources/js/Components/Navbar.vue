@@ -2,11 +2,27 @@
 import { ref } from "vue";
 
 const showProfileMenu = ref(false);
+
+const showModal = ref(false); 
+const modalTitle = ref("");
+const modalImage = ref("");
+
+const openImage = (title, image) => {
+    modalTitle.value = title;
+    modalImage.value = image;
+    showModal.value = true;
+    showProfileMenu.value = false;
+};
 </script>
 
 <template>
-    <nav class="bg-green-700 text-white px-6 py-4 flex justify-between">
-        <img src="images/Logo KKN 114.png" alt="KKN 114" class="h-12 w-auto mr-3" />
+    <!-- Membuat navbar tetap di atas saat di scroll -->
+    <nav  class="sticky top-0 z-50 bg-green-700 text-white px-6 py-4 flex justify-between shadow-lg"> 
+        <img
+            src="images/Logo KKN 114.png"
+            alt="KKN 114"
+            class="h-12 w-auto mr-3"
+        />
 
         <div class="flex items-center space-x-6">
             <a href="/" class="hover:text-green-600"> Beranda </a>
@@ -15,35 +31,53 @@ const showProfileMenu = ref(false);
             <div class="relative">
                 <button
                     @click="showProfileMenu = !showProfileMenu"
-                    class="text-white font-semibold"
+                    class="text-white font-semibold flex items-center gap-1"
                 >
                     Profil Desa ▼
                 </button>
 
                 <div
                     v-if="showProfileMenu"
-                    class="absolute left-0 mt-2 w-56 bg-red-500 rounded-lg shadow-lg z-50"
+                    class="absolute left-0 mt-2 w-64 bg-yellow-500 rounded-xl shadow-xl overflow-hidden z-50"
                 >
-                    <a
-                        href="/visiMisi"
-                        class="block px-4 py-2 hover:bg-red-600 text-white"
+                    <!-- Peta Administrasi -->
+                    <button
+                        @click="
+                            openImage(
+                                'Peta Administrasi Desa Petir',
+                                'images/peta administasi.png',
+                            )
+                        "
+                        class="w-full text-left px-5 py-3 hover:bg-gray-400"
                     >
-                        Visi Misi
-                    </a>
+                        🗺️ Peta Administrasi Desa
+                    </button>
 
-                    <a
-                        href="/monografi"
-                        class="block px-4 py-2 hover:bg-red-600 text-white"
+                    <!-- Peta Pemukiman -->
+                    <button
+                        @click="
+                            openImage(
+                                'Peta Pemukiman Dukuh Ploso',
+                                'images/peta pemukiman.png',
+                            )
+                        "
+                        class="w-full text-left px-5 py-3 hover:bg-gray-400"
                     >
-                        Monografi Desa
-                    </a>
+                        🏘️ Peta Pemukiman
+                    </button>
 
-                    <a
-                        href="/struktur"
-                        class="block px-4 py-2 hover:bg-red-600 text-white"
+                    <!-- Struktur Organisasi -->
+                    <button
+                        @click="
+                            openImage(
+                                'Struktur Organisasi Dukuh Ploso',
+                                'images/Struktur Organisasi Dukuh Ploso fix.png',
+                            )
+                        "
+                        class="w-full text-left px-5 py-3 hover:bg-gray-400"
                     >
-                        Struktur Organisasi
-                    </a>
+                        👥 Struktur Organisasi
+                    </button>
                 </div>
             </div>
 
@@ -52,4 +86,31 @@ const showProfileMenu = ref(false);
             <a href="/#galeri" class="hover:text-green-600"> Galeri Dukuh </a>
         </div>
     </nav>
+
+    <!-- Modal  Peta Administrasi, Peta Pemukiman, & Struktur Organisasi -->
+    <div
+        v-if="showModal"
+        class="fixed inset-0 bg-black/70 flex justify-center items-center z-50"
+    >
+        <div
+            class="bg-white rounded-2xl p-6 max-w-5xl w-[90%] relative shadow-2xl"
+        >
+            <button
+                @click="showModal = false"
+                class="absolute top-4 right-4 text-2xl hover:text-red-600"
+            >
+                ✕
+            </button>
+
+            <h2 class="text-2xl font-bold text-center text-green-700 mb-5">
+                {{ modalTitle }}
+            </h2>
+
+            <img
+                :src="modalImage"
+                :alt="modalTitle"
+                class="w-full max-h-[75vh] object-contain rounded-lg"
+            />
+        </div>
+    </div>
 </template>
