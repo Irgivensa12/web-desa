@@ -7,8 +7,21 @@ import {
     Handshake,
     Phone,
     MapPin,
+    Sprout,
+    Tractor,
+    Trees,
+    Home,
+    Users,
+    CheckCircle,
 } from "lucide-vue-next";
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 const showRT = ref(false);
 
 const openedRT = ref(null);
@@ -59,33 +72,83 @@ const daftarRT = [
         show: false,
     },
 ];
+const showTop = ref(false);
+
+const handleScroll = () => {
+    showTop.value = window.scrollY > 400;
+};
+
+const scrollTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+};
+
+onMounted(() => {
+    window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+    window.removeEventListener("scroll", handleScroll);
+});
+const activePotensi = ref("pertanian");
+
+const dokumentasi = [
+    {
+        foto: "images/Kerja Bakti W1.jpg",
+        judul: "Kerja Bakti",
+    },
+    {
+        foto: "/images/kegiatan2.jpg",
+        judul: "Posyandu",
+    },
+    {
+        foto: "/images/kegiatan3.jpg",
+        judul: "Panen Raya",
+    },
+    {
+        foto: "/images/kegiatan4.jpg",
+        judul: "Perayaan HUT RI",
+    },
+    {
+        foto: "/images/kegiatan5.jpg",
+        judul: "Musyawarah Warga",
+    },
+];
 </script>
 
 <template>
     <MainLayout>
         <!-- HERO -->
-        <section class="relative h-[500px]">
+        <section class="relative h-60 md:h-96 lg:h-[500px]">
             <img
-                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+                src="images/Balai Dukuh.jpeg"
                 class="w-full h-full object-cover"
             />
 
             <div
-                class="absolute inset-0 bg-black/50 flex items-center justify-center"
+                class="absolute inset-0 bg-black/60 flex items-center justify-center"
             >
                 <div class="text-center text-white">
-                    <h1 class="text-4xl md:text-5xl font-bold">
+                    <h1
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide drop-shadow-[0_5px_10px_rgba(0,0,0,0.9)]"
+                    >
                         SELAMAT DATANG DI <br />
                         DUKUH PLOSO
                     </h1>
-                    <p class="mt-2">Guyub Makarya, Maju Bebarengan</p>
+                    <p
+                        class="mt-5 text-base sm:text-lg md:text-xl font-medium tracking-wide drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]"
+                    >
+                        Guyub Makarya, Maju Bebarengan
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- Populasi Penduduk -->
         <section class="py-20 bg-green-50">
-            <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
                 <h2 class="text-4xl font-bold text-center text-green-700">
                     Populasi Penduduk
                 </h2>
@@ -152,7 +215,9 @@ const daftarRT = [
                         >
                             <span>
                                 {{
-                                    showRT ? "Sembunyikan Detail" : "Lihat Detail"
+                                    showRT
+                                        ? "Sembunyikan Detail"
+                                        : "Lihat Detail"
                                 }}
                             </span>
 
@@ -223,7 +288,7 @@ const daftarRT = [
         </section>
         <!-- SEJARAH DUKUH -->
         <section class="py-20 bg-gray-50" id="sejarah">
-            <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
                 <h2 class="text-4xl font-bold text-center text-green-700">
                     Sejarah Dukuh Ploso
                 </h2>
@@ -330,115 +395,276 @@ const daftarRT = [
 
         <!-- POTENSI DUKUH -->
         <section class="py-20 bg-white" id="potensi">
-            <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center text-green-700">
-                    Potensi Dukuh Ploso
-                </h2>
+            <h2 class="text-4xl font-bold text-center text-green-700">
+                Potensi Dukuh Ploso
+            </h2>
 
-                <p class="text-center text-gray-500 mt-3 mb-14">
-                    Berbagai potensi yang dimiliki Dukuh Ploso sebagai
-                    usaha-usaha untuk meningkatkan kesejahteraan masyarakat dan
-                    mendukung pembangunan masyarakat.
-                </p>
+            <p class="text-center text-gray-500 mt-3 mb-14">
+                Berbagai potensi yang dimiliki Dukuh Ploso sebagai usaha-usaha
+                untuk meningkatkan kesejahteraan masyarakat dan mendukung
+                pembangunan masyarakat.
+            </p>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div
-                        class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition"
-                    >
-                        <div class="text-5xl mb-5">
-                            <Wheat
-                                :size="50"
-                                class="mx-auto text-yellow-600 mb-4"
-                            />
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                <button
+                    @click="activePotensi = 'pertanian'"
+                    :class="
+                        activePotensi === 'pertanian'
+                            ? 'bg-green-600 text-white'
+                            : 'bg-white'
+                    "
+                    class="rounded-xl shadow p-5 transition"
+                >
+                    <Wheat class="mx-auto mb-2" />
+                    Pertanian
+                </button>
+
+                <button
+                    @click="activePotensi = 'peternakan'"
+                    :class="
+                        activePotensi === 'peternakan'
+                            ? 'bg-green-600 text-white'
+                            : 'bg-white'
+                    "
+                    class="rounded-xl shadow p-5 transition"
+                >
+                    <Beef class="mx-auto mb-2" />
+                    Peternakan
+                </button>
+
+                <button
+                    @click="activePotensi = 'alam'"
+                    :class="
+                        activePotensi === 'alam'
+                            ? 'bg-green-600 text-white'
+                            : 'bg-white'
+                    "
+                    class="rounded-xl shadow p-5 transition"
+                >
+                    <Mountain class="mx-auto mb-2" />
+                    Alam
+                </button>
+
+                <button
+                    @click="activePotensi = 'gotong'"
+                    :class="
+                        activePotensi === 'gotong'
+                            ? 'bg-green-600 text-white'
+                            : 'bg-white'
+                    "
+                    class="rounded-xl shadow p-5 transition"
+                >
+                    <Handshake class="mx-auto mb-2" />
+                    Gotong Royong
+                </button>
+            </div>
+            <!-- Panel Potensi -->
+            <div class="bg-white rounded-2xl shadow-xl p-5 md:p-8">
+                <!-- PERTANIAN -->
+                <div v-if="activePotensi === 'pertanian'">
+                    <h3 class="text-3xl font-bold text-green-700 mb-4">
+                        🌾 Pertanian
+                    </h3>
+
+                    <p class="text-gray-600 mb-8">
+                        Mayoritas masyarakat Dukuh Ploso bekerja sebagai petani.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <Sprout class="text-green-600" />
+                            <span>Persiapan Lahan</span>
                         </div>
 
-                        <h3 class="font-bold text-xl mb-3">Pertanian</h3>
+                        <div class="ml-4 border-l-2 border-green-500 h-8"></div>
 
-                        <p class="text-gray-600">
-                            Mayoritas masyarakat bekerja sebagai petani dengan
-                            berbagai hasil pertanian seperti padi, jagung, umbi-umbian, dan sayuran.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition"
-                    >
-                        <div class="text-5xl mb-5">
-                            <Beef
-                                :size="50"
-                                class="mx-auto text-red-800 mb-4"
-                            />
+                        <div class="flex items-center gap-4">
+                            <Wheat class="text-yellow-500" />
+                            <span>Penanaman</span>
                         </div>
 
-                        <h3 class="font-bold text-xl mb-3">Peternakan</h3>
+                        <div class="ml-4 border-l-2 border-green-500 h-8"></div>
 
-                        <p class="text-gray-600">
-                            Sebagian Masyarakat juga memiliki hewan ternak
-                            seperti ayam, sapi, kambing, angsa dan lain-lain.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition"
-                    >
-                        <div class="text-5xl mb-5">
-                            <Mountain
-                                :size="48"
-                                class="mx-auto text-green-500 mb-4"
-                            />
+                        <div class="flex items-center gap-4">
+                            <Tractor class="text-orange-600" />
+                            <span>Panen</span>
                         </div>
-
-                        <h3 class="font-bold text-xl mb-3">Alam</h3>
-
-                        <p class="text-gray-600">
-                            Dikelilingi pemandangan pegunungan dan hamparan
-                            sawah dan perkebunan yang membuat suasana menjadi asri dan sejuk.
-                        </p>
                     </div>
 
-                    <div
-                        class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition"
-                    >
-                        <div class="text-5xl mb-5">
-                            <Handshake
-                                :size="48"
-                                class="mx-auto text-blue-600 mb-4"
-                            />
-                        </div>
+                    <hr class="my-8" />
 
-                        <h3 class="font-bold text-xl mb-3">Gotong Royong</h3>
+                    <h4 class="font-bold mb-3">Komoditas</h4>
 
-                        <p class="text-gray-600">
-                            Nilai kebersamaan dan gotong royong masih menjadi
-                            budaya yang terus dijaga oleh masyarakat.
-                        </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-green-100 px-4 py-2 rounded-full">
+                            Padi
+                        </span>
+
+                        <span class="bg-green-100 px-4 py-2 rounded-full">
+                            Jagung
+                        </span>
+
+                        <span class="bg-green-100 px-4 py-2 rounded-full">
+                            Singkong
+                        </span>
+                        <span class="bg-green-100 px-4 py-2 rounded-full">
+                            Kacang Tanah
+                        </span>
+
+                        <span class="bg-green-100 px-4 py-2 rounded-full">
+                            Cabai
+                        </span>
+
+                        <span class="bg-green-100 px-4 py-2 rounded-full">
+                            Sayuran
+                        </span>
                     </div>
+                </div>
+
+                <!-- PETERNAKAN -->
+                <div v-if="activePotensi === 'peternakan'">
+                    <h3 class="text-3xl font-bold text-red-700 mb-4">
+                        🐄 Peternakan
+                    </h3>
+
+                    <p class="text-gray-600 mb-8">
+                        Sebagian masyarakat memelihara hewan ternak untuk
+                        tabungan (aset finansial) yang bisa dicairkan
+                        sewaktu-waktu. Selain itu, hewan ternak juga bisa
+                        menjadi sumber pangan bagi masyarakat.
+                    </p>
+
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <CheckCircle class="text-green-600" />
+                            Sapi
+                        </li>
+
+                        <li class="flex gap-3">
+                            <CheckCircle class="text-green-600" />
+                            Kambing
+                        </li>
+
+                        <li class="flex gap-3">
+                            <CheckCircle class="text-green-600" />
+                            Ayam
+                        </li>
+
+                        <li class="flex gap-3">
+                            <CheckCircle class="text-green-600" />
+                            Angsa
+                        </li>
+                        <li class="flex gap-3">
+                            <CheckCircle class="text-green-600" />
+                            DLL
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ALAM -->
+                <div v-if="activePotensi === 'alam'">
+                    <h3 class="text-3xl font-bold text-green-700 mb-4">
+                        🏔 Alam
+                    </h3>
+                    <p class="text-gray-600 mb-8">
+                        Dukuh Ploso memiliki udara yang sejuk dan pemandangan
+                        alam yang indah-indah antara lain:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3"><Trees /> Hamparan Sawah</li>
+                        <li class="flex gap-3"><Mountain /> Perbukitan</li>
+                        <li class="flex gap-3"><Home /> Permukiman Pedesaan</li>
+                    </ul>
+                </div>
+
+                <!-- Gotong Royong -->
+                <div v-if="activePotensi === 'gotong'">
+                    <h3 class="text-3xl font-bold text-blue-700 mb-4">
+                        🤝 Gotong Royong
+                    </h3>
+
+                    <p class="text-gray-600 mb-8">
+                        Budaya kebersamaan masih sangat dijaga masyarakat Dukuh
+                        Ploso.
+                    </p>
+
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <Users />
+                            Kerja Bakti
+                        </li>
+
+                        <li class="flex gap-3">
+                            <Users />
+                            Musyawarah
+                        </li>
+
+                        <li class="flex gap-3">
+                            <Users />
+                            Siskamling
+                        </li>
+
+                        <li class="flex gap-3">
+                            <Users />
+                            Perayaan HUT Desa
+                        </li>
+                        <li class="flex gap-3">
+                            <Users />
+                            Rewang (Hajatan, Pernikahan, dll)
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- GALERI -->
-        <section class="p-8 bg-gray-100" id="galeri">
-            <h2 class="text-4xl font-bold text-center text-green-700 mb-8">
-                Galeri Dukuh Ploso
-            </h2>
+        <section class="py-20 bg-white" id="galeri">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+                <h2 class="text-4xl font-bold text-center text-green-700">
+                    Dokumentasi Kegiatan
+                </h2>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div v-for="i in 6" :key="i" class="relative group">
-                    <img
-                        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
-                        class="rounded-lg w-full h-[150px] object-cover"
-                    />
+                <p class="text-center text-gray-600 mt-3 mb-12">
+                    Berbagai kegiatan masyarakat Dukuh Ploso.
+                </p>
 
-                    <div
-                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white rounded-lg"
-                    >
-                        Dokumentasi Padukuhan
-                    </div>
-                </div>
+                <Swiper
+                    :modules="[Autoplay, Navigation, Pagination]"
+                    :slides-per-view="1"
+                    :space-between="25"
+                    :loop="true"
+                    :autoplay="{ delay: 3000 }"
+                    :navigation="true"
+                    :pagination="{ clickable: true }"
+                    :breakpoints="{
+                        640: {
+                            slidesPerView: 1,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                        },
+                    }"
+                >
+                    <SwiperSlide v-for="item in dokumentasi" :key="item.judul">
+                        <div class="rounded-xl overflow-hidden shadow-lg group">
+                            <img
+                                :src="item.foto"
+                                class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+                            />
+
+                            <div class="bg-white p-5">
+                                <h3 class="font-bold text-lg">
+                                    {{ item.judul }}
+                                </h3>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
             </div>
         </section>
-
         <!-- KONTAK -->
         <section class="p-8 bg-gray-100">
             <h2 class="text-4xl font-bold text-center text-green-700 mb-8">
@@ -549,6 +775,14 @@ const daftarRT = [
             </div>
         </section>
     </MainLayout>
+    <!-- Tombol Scroll ke Atas -->
+    <button
+        v-if="showTop"
+        @click="scrollTop"
+        class="fixed bottom-8 right-8 bg-green-700 text-white p-4 rounded-full shadow-xl hover:bg-green-800 transition"
+    >
+        ↑
+    </button>
 </template>
 <style scoped>
 .fade-enter-active,
