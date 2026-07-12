@@ -11,7 +11,10 @@ const modalImage = ref("");
 const openImage = (title, image) => {
     modalTitle.value = title;
     modalImage.value = image;
+
     showModal.value = true;
+
+    // tutup semua menu
     showProfileMenu.value = false;
     showMobileMenu.value = false;
 };
@@ -63,6 +66,7 @@ const openImage = (title, image) => {
                         <ChevronDown :size="18" />
                     </button>
 
+                    <!-- Dropdown Desktop -->
                     <div
                         v-if="showProfileMenu"
                         class="absolute mt-3 right-0 md:left-0 w-64 bg-white rounded-xl shadow-xl overflow-hidden text-gray-800"
@@ -83,7 +87,7 @@ const openImage = (title, image) => {
                             @click="
                                 openImage(
                                     'Peta Pemukiman Dukuh Ploso',
-                                    'images/peta pemukiman.png',
+                                    'images/Peta Pemukiman Dukuh Ploso.png',
                                 )
                             "
                             class="block w-full text-left px-5 py-3 hover:bg-green-100"
@@ -95,7 +99,7 @@ const openImage = (title, image) => {
                             @click="
                                 openImage(
                                     'Struktur Organisasi Dukuh Ploso',
-                                    'images/Struktur Organisasi Dukuh Ploso fix.png',
+                                    'images/Struktur Organisasi Dukuh Ploso.png',
                                 )
                             "
                             class="block w-full text-left px-5 py-3 hover:bg-green-100"
@@ -105,11 +109,29 @@ const openImage = (title, image) => {
                     </div>
                 </div>
 
-                <a href="/#sejarah" class="hover:text-yellow-300"> Sejarah </a>
+                <a
+                    href="/#sejarah"
+                    @click="showMobileMenu = false"
+                    class="hover:text-yellow-300"
+                >
+                    Sejarah
+                </a>
 
-                <a href="/#potensi" class="hover:text-yellow-300"> Potensi </a>
+                <a
+                    href="/#potensi"
+                    @click="showMobileMenu = false"
+                    class="hover:text-yellow-300"
+                >
+                    Potensi
+                </a>
 
-                <a href="/#galeri" class="hover:text-yellow-300"> Galeri </a>
+                <a
+                    href="/#galeri"
+                    @click="showMobileMenu = false"
+                    class="hover:text-yellow-300"
+                >
+                    Galeri
+                </a>
             </div>
 
             <!-- HAMBURGER -->
@@ -131,6 +153,7 @@ const openImage = (title, image) => {
         >
             <a
                 href="/"
+                @click="showMobileMenu = false"
                 class="block px-4 md:px-6 py-3 md:py-4 border-b border-green-600 hover:bg-green-600 transition"
             >
                 Beranda
@@ -139,16 +162,25 @@ const openImage = (title, image) => {
             <!-- Dropdown -->
 
             <button
-                @click="
-                    showMobileMenu = !showMobileMenu;
-                    showProfileMenu = false;
-                "
-                class="w-full text-left px-4 md:px-6 py-3 md:py-4 border-b border-green-600 hover:bg-green-600 transition"
+                @click="showProfileMenu = !showProfileMenu"
+                class="w-full flex items-center justify-between px-4 py-3 border-b border-green-600 hover:bg-green-600 transition"
             >
-                Profil Desa ▼
+                <span>Profil Desa</span>
+
+                <ChevronDown
+                    :size="18"
+                    :class="[
+                        'transition-transform duration-200',
+                        showProfileMenu ? 'rotate-180' : '',
+                    ]"
+                />
             </button>
 
-            <div v-if="showProfileMenu" class="bg-green-800">
+            <!-- Mobile Menu -->
+            <div
+                v-if="showProfileMenu"
+                class="bg-white text-gray-800 rounded-b-lg overflow-hidden"
+            >
                 <button
                     @click="
                         openImage(
@@ -156,7 +188,7 @@ const openImage = (title, image) => {
                             'images/peta administasi.png',
                         )
                     "
-                    class="block w-full text-left px-10 py-3"
+                    class="block w-full text-left px-6 py-3 hover:bg-green-100 transition"
                 >
                     🗺️ Peta Administrasi
                 </button>
@@ -168,7 +200,7 @@ const openImage = (title, image) => {
                             'images/peta pemukiman.png',
                         )
                     "
-                    class="block w-full text-left px-10 py-3"
+                    class="block w-full text-left px-6 py-3 hover:bg-green-100 transition"
                 >
                     🏘️ Peta Pemukiman
                 </button>
@@ -180,7 +212,7 @@ const openImage = (title, image) => {
                             'images/Struktur Organisasi Dukuh Ploso fix.png',
                         )
                     "
-                    class="block w-full text-left px-10 py-3"
+                    class="block w-full text-left px-6 py-3 hover:bg-green-100 transition"
                 >
                     👥 Struktur Organisasi
                 </button>
