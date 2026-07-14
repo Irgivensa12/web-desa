@@ -45,7 +45,7 @@ const daftarRT = [
         ketua: "Bpk. Gandung Purwanto",
         kk: 22,
         deskripsi:
-            "Mayoritas masyarakat bekerja sebagai petani padi dan peternak kambing.",
+            "Lokasi RT 09 berada di atas bukit dan dekat dengan masjid, sehingga memudahkan akses ke fasilitas umum",
         foto: "/images/rt/rt1.jpg",
         show: false,
     },
@@ -54,8 +54,8 @@ const daftarRT = [
         ketua: "Bpk. Jaka Triana",
         kk: 21,
         deskripsi:
-            "Mayoritas masyarakat bekerja sebagai petani padi dan peternak kambing.",
-        foto: "/images/rt/rt2.jpg",
+            "Lokasi RT 10 dekat dengan balai dukuh, masjid, dan sawah tegalan, sehingga memudahkan akses ke fasilitas umum",
+        foto: "images/RT 10.jpeg",
         show: false,
     },
     {
@@ -63,7 +63,7 @@ const daftarRT = [
         ketua: "Bpk. Ali Bertus",
         kk: 24,
         deskripsi:
-            "Mayoritas masyarakat bekerja sebagai petani padi dan peternak kambing.",
+            "Lokasi RT 11 dekat dengan RT 10 dan sawah tegalan",
         foto: "images/RT 11.jpeg",
         show: false,
     },
@@ -72,8 +72,8 @@ const daftarRT = [
         ketua: "Bpk. Muncar",
         kk: 23,
         deskripsi:
-            "Mayoritas masyarakat bekerja sebagai petani padi dan peternak kambing.",
-        foto: "/images/rt/rt4.jpg",
+            "Lokasi RT 12 dekat dengan warung kebutuhan sehari-hari, sehingga memudahkan akses ke kebutuhan pokok",
+        foto: "images/RT 12.jpeg",
         show: false,
     },
 ];
@@ -119,6 +119,14 @@ const dokumentasi = [
     {
         foto: "images/Kumpul Warga.jpeg",
         judul: "Kumpul Warga",
+    },
+    {
+        foto: "images/Arisan Bapak-Bapak.jpeg",
+        judul: "Arisan Bapak-Bapak",
+    },
+    {
+        foto: "images/Kegiatan Ibu-Ibu PKK.jpeg",
+        judul: "Kegiatan Ibu-Ibu PKK",
     },
 ];
 </script>
@@ -179,7 +187,7 @@ const dokumentasi = [
                             <h3 class="font-bold text-lg">Dukuh</h3>
 
                             <p class="text-green-700 font-semibold mt-2">
-                                Sutarjo Radja Harso
+                                Sumardi Hadi Pramono
                             </p>
 
                             <div
@@ -201,7 +209,7 @@ const dokumentasi = [
                             <h3 class="font-bold text-lg">Penduduk</h3>
 
                             <p class="text-3xl font-bold text-green-700 mt-3">
-                                331
+                                333
                             </p>
 
                             <p class="text-gray-500">Jiwa</p>
@@ -539,10 +547,12 @@ const dokumentasi = [
 
                         <p class="text-gray-600 mb-8">
                             Mayoritas masyarakat Dukuh Ploso bekerja sebagai
-                            petani. Kondisi geografis yang berada di kawasan
-                            pegunungan dengan curah hujan yang cukup menjadikan
-                            sektor pertanian sebagai mata pencaharian utama
-                            masyarakat.
+                            petani. Pola tanam masyarakat mengikuti pergantian
+                            musim sehingga jenis tanaman yang dibudidayakan
+                            berbeda pada musim hujan (Rendengan) dan musim
+                            kemarau (Lemaringan). Beberapa komoditas seperti
+                            singkong juga dapat ditanam bersamaan dengan padi
+                            karena memiliki masa panen yang lebih panjang.
                         </p>
 
                         <!-- MUSIM -->
@@ -556,7 +566,7 @@ const dokumentasi = [
                                 <h4
                                     class="text-xl font-bold text-blue-700 mb-2"
                                 >
-                                    🌧 Musim Hujan
+                                    🌧 Musim Rendengan (Hujan)
                                 </h4>
 
                                 <p class="text-sm text-blue-600 mb-4">
@@ -565,9 +575,10 @@ const dokumentasi = [
 
                                 <ul class="space-y-2">
                                     <li>🌾 Padi</li>
-
                                     <li>🌽 Jagung</li>
-
+                                    <li>🥜 Kacang Tanah</li>
+                                    <li>🫛 Kacang Hijau</li>
+                                    <li>🥛 Kedelai</li>
                                     <li>🥬 Sayuran</li>
                                 </ul>
                             </div>
@@ -580,23 +591,42 @@ const dokumentasi = [
                                 <h4
                                     class="text-xl font-bold text-yellow-700 mb-2"
                                 >
-                                    ☀ Musim Kemarau
+                                    ☀ Musim Lemaringan (Kemarau)
                                 </h4>
 
                                 <p class="text-sm text-yellow-700 mb-4">
-                                    Mei – Oktober
+                                    Mei – Juli
                                 </p>
 
                                 <ul class="space-y-2">
                                     <li>🥔 Singkong</li>
-
                                     <li>🥜 Kacang Tanah</li>
-
+                                    <li>🫛 Kacang Hijau</li>
+                                    <li>🥛 Kedelai</li>
                                     <li>🌶 Cabai</li>
+                                    <li>🍠 Ubi Jalar</li>
                                 </ul>
                             </div>
                         </div>
 
+                        <!-- Keterangan -->
+                        <div
+                            class="mt-6 mb-10 bg-green-50 border border-green-200 rounded-xl p-4"
+                        >
+                            <h5 class="font-semibold text-green-700 mb-2">
+                                📌 Keterangan
+                            </h5>
+
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                Beberapa komoditas seperti singkong, ubi jalar,
+                                kacang tanah, kacang hijau, kedelai, dan tanaman
+                                palawija lainnya dapat ditanam bersamaan
+                                (tumpangsari) maupun disesuaikan dengan musim
+                                tanam, terutama apabila memiliki masa
+                                pertumbuhan atau masa panen yang lebih singkat
+                                sehingga tidak mengganggu tanaman utama.
+                            </p>
+                        </div>
                         <!-- KALENDER PERTANIAN -->
 
                         <h4 class="font-bold text-xl mb-4">
@@ -681,10 +711,6 @@ const dokumentasi = [
                                             🥔 Singkong
                                         </td>
 
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-
                                         <td class="bg-yellow-400"></td>
                                         <td class="bg-yellow-400"></td>
                                         <td class="bg-yellow-400"></td>
@@ -692,9 +718,11 @@ const dokumentasi = [
                                         <td class="bg-yellow-400"></td>
                                         <td class="bg-yellow-400"></td>
                                         <td class="bg-yellow-400"></td>
-
-                                        <td></td>
-                                        <td></td>
+                                        <td class="bg-yellow-400"></td>
+                                        <td class="bg-yellow-400"></td>
+                                        <td class="bg-yellow-400"></td>
+                                        <td class="bg-yellow-400"></td>
+                                        <td class="bg-yellow-400"></td>
                                     </tr>
 
                                     <!-- CABAI -->
@@ -704,9 +732,6 @@ const dokumentasi = [
                                             🌶 Cabai
                                         </td>
 
-                                        <td class="bg-red-400"></td>
-                                        <td class="bg-red-400"></td>
-
                                         <td></td>
                                         <td></td>
                                         <td></td>
@@ -715,6 +740,104 @@ const dokumentasi = [
                                         <td class="bg-red-400"></td>
                                         <td class="bg-red-400"></td>
                                         <td class="bg-red-400"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Kacang Tanah -->
+
+                                    <tr>
+                                        <td class="font-semibold text-left p-2">
+                                            🥜 Kacang Tanah
+                                        </td>
+
+                                        <td class="bg-amber-600"></td>
+                                        <td class="bg-amber-600"></td>
+
+                                        <td></td>
+                                        <td></td>
+
+                                        <td class="bg-amber-600"></td>
+                                        <td class="bg-amber-600"></td>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+
+                                        <td class="bg-amber-600"></td>
+                                        <td class="bg-amber-600"></td>
+
+                                        <td></td>
+                                    </tr>
+                                    <!-- Kacang Hijau -->
+
+                                    <tr>
+                                        <td class="font-semibold text-left p-2">
+                                            🫛 Kacang Hijau
+                                        </td>
+
+                                        <td></td>
+
+                                        <td class="bg-green-300"></td>
+                                        <td class="bg-green-300"></td>
+
+                                        <td></td>
+                                        <td></td>
+
+                                        <td class="bg-green-300"></td>
+                                        <td class="bg-green-300"></td>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+
+                                        <td class="bg-green-300"></td>
+                                        <td class="bg-green-300"></td>
+                                    </tr>
+                                    <!-- Kedelai -->
+
+                                    <tr>
+                                        <td class="font-semibold text-left p-2">
+                                            🥛 Kedelai
+                                        </td>
+
+                                        <td></td>
+
+                                        <td class="bg-blue-100"></td>
+                                        <td class="bg-blue-100"></td>
+
+                                        <td></td>
+                                        <td></td>
+
+                                        <td class="bg-blue-100"></td>
+                                        <td class="bg-blue-100"></td>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+
+                                        <td class="bg-blue-100"></td>
+                                        <td class="bg-blue-100"></td>
+                                    </tr>
+                                    <!-- Ubi Jalar -->
+
+                                    <tr>
+                                        <td class="font-semibold text-left p-2">
+                                            🍠 Ubi Jalar
+                                        </td>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+
+                                        <td class="bg-orange-300"></td>
+                                        <td class="bg-orange-300"></td>
+                                        <td class="bg-orange-300"></td>
+                                        <td class="bg-orange-300"></td>
+                                        <td class="bg-orange-300"></td>
 
                                         <td></td>
                                         <td></td>
@@ -722,6 +845,62 @@ const dokumentasi = [
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+
+                        <!-- Legenda Kalender Tanaman -->
+                        <div class="flex flex-wrap gap-4 mt-5 text-sm">
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="w-4 h-4 rounded bg-green-500"
+                                ></span>
+                                Padi
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="w-4 h-4 rounded bg-lime-400"
+                                ></span>
+                                Jagung
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="w-4 h-4 rounded bg-yellow-400"
+                                ></span>
+                                Singkong
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <span class="w-4 h-4 rounded bg-red-400"></span>
+                                Cabai
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="w-4 h-4 rounded bg-orange-400"
+                                ></span>
+                                Kacang Tanah
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="w-4 h-4 rounded bg-green-300"
+                                ></span>
+                                Kacang Hijau
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="w-4 h-4 rounded bg-blue-100"
+                                ></span>
+                                Kedelai
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="w-4 h-4 rounded bg-orange-300"
+                                ></span>
+                                Ubi Jalar
+                            </div>
                         </div>
 
                         <!-- KOMODITAS -->
@@ -749,6 +928,18 @@ const dokumentasi = [
 
                             <span class="bg-amber-100 px-4 py-2 rounded-full">
                                 🥜 Kacang Tanah
+                            </span>
+
+                            <span class="bg-emerald-100 px-4 py-2 rounded-full">
+                                🫛 Kacang Hijau
+                            </span>
+
+                            <span class="bg-blue-100 px-4 py-2 rounded-full">
+                                🥛 Kedelai
+                            </span>
+
+                            <span class="bg-orange-300 px-4 py-2 rounded-full">
+                                🍠 Ubi Jalar
                             </span>
 
                             <span class="bg-lime-100 px-4 py-2 rounded-full">
@@ -808,7 +999,7 @@ const dokumentasi = [
                         </p>
                         <ul class="space-y-4">
                             <li class="flex gap-3">
-                                <Trees /> Hamparan Sawah & Kebun
+                                <Trees /> Sawah Irigasi & Sawah Tegalan/Kebun
                             </li>
                             <li class="flex gap-3">
                                 <Mountain /> Pegunungan Perbukitan
@@ -822,39 +1013,108 @@ const dokumentasi = [
                     <!-- Gotong Royong -->
                     <div v-if="activePotensi === 'gotong'">
                         <h3 class="text-3xl font-bold text-blue-700 mb-4">
-                            🤝 Gotong Royong
+                            🤝 Gotong Royong & Tradisi Masyarakat
                         </h3>
 
                         <p class="text-gray-600 mb-8">
-                            Budaya kebersamaan masih sangat dijaga masyarakat
-                            Dukuh Ploso.
+                            Masyarakat Dukuh Ploso masih menjaga semangat gotong
+                            royong, kebersamaan, serta melestarikan berbagai
+                            adat istiadat yang diwariskan secara turun-temurun
+                            sebagai wujud rasa syukur kepada Tuhan Yang Maha
+                            Esa.
                         </p>
 
-                        <ul class="space-y-4">
-                            <li class="flex gap-3">
-                                <Users />
-                                Kerja Bakti
-                            </li>
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <!-- Gotong Royong -->
+                            <div
+                                class="bg-blue-50 border border-blue-200 rounded-xl p-5"
+                            >
+                                <h4
+                                    class="font-bold text-lg text-blue-700 mb-4"
+                                >
+                                    🛠️ Kegiatan Gotong Royong
+                                </h4>
 
-                            <li class="flex gap-3">
-                                <Users />
-                                Musyawarah
-                            </li>
+                                <ul class="space-y-3 text-gray-700">
+                                    <li>🤝 Musyawarah warga</li>
+                                    <li>🧹 Kerja bakti lingkungan</li>
+                                    <li>🚨 Siskamling</li>
+                                    <li>🎉 Perayaan Hari Kemerdekaan RI</li>
+                                    <li>
+                                        🏡 Rewang / bantu-membantu saat hajatan,
+                                        pernikahan, dan kegiatan sosial lainnya
+                                    </li>
+                                </ul>
+                            </div>
 
-                            <li class="flex gap-3">
-                                <Users />
-                                Siskamling
-                            </li>
+                            <!-- Tradisi -->
+                            <div
+                                class="bg-green-50 border border-green-200 rounded-xl p-5"
+                            >
+                                <h4
+                                    class="font-bold text-lg text-green-700 mb-4"
+                                >
+                                    🌿 Tradisi & Budaya
+                                </h4>
 
-                            <li class="flex gap-3">
-                                <Users />
-                                Perayaan HUT Desa
-                            </li>
-                            <li class="flex gap-3">
-                                <Users />
-                                Rewang/Bantu-Bantu (Hajatan, Pernikahan, dll)
-                            </li>
-                        </ul>
+                                <ul class="space-y-3 text-gray-700">
+                                    <li>
+                                        🌾 <b>Bersih Dusun (Rasulan)</b><br />
+                                        <span class="text-sm text-gray-600">
+                                            Ungkapan rasa syukur kepada Tuhan
+                                            atas ketentraman hidup sekaligus doa
+                                            agar musim tanam dan hasil panen
+                                            diberikan keberkahan.
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        🐄 <b>Gumbrekan / Kenduri Ternak</b
+                                        ><br />
+                                        <span class="text-sm text-gray-600">
+                                            Bentuk rasa syukur atas rezeki
+                                            berupa hewan ternak yang menjadi
+                                            tabungan dan investasi masyarakat.
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        🌾 <b>Kirim Duwo</b><br />
+                                        <span class="text-sm text-gray-600">
+                                            Tradisi setelah panen sebagai
+                                            ungkapan terima kasih kepada Tuhan
+                                            atas hasil pertanian yang melimpah.
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        🌙 <b>Suran</b><br />
+                                        <span class="text-sm text-gray-600">
+                                            Peringatan datangnya Tahun Baru
+                                            Islam (1 Muharram).
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        🕌 <b>Muludan</b><br />
+                                        <span class="text-sm text-gray-600">
+                                            Memperingati kelahiran Nabi Muhammad
+                                            SAW.
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        🤲 <b>Doa Bersama & Sholawatan</b><br />
+                                        <span class="text-sm text-gray-600">
+                                            Dilaksanakan pada berbagai
+                                            kesempatan sebagai bentuk
+                                            kebersamaan serta memohon
+                                            keselamatan dan keberkahan.
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1055,7 +1315,7 @@ const dokumentasi = [
 
             <div class="p-6">
                 <h2 class="text-2xl font-bold text-green-700">
-                    Sutarjo Radja Harso
+                    Sumardi Hadi Pramono
                 </h2>
 
                 <p class="text-gray-600 mt-2">Kepala Dukuh Ploso</p>

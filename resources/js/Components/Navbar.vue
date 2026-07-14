@@ -197,7 +197,7 @@ const openImage = (title, image) => {
                     @click="
                         openImage(
                             'Peta Pemukiman Dukuh Ploso',
-                            'images/peta pemukiman.png',
+                            'images/Peta Pemukiman Dukuh Ploso.png',
                         )
                     "
                     class="block w-full text-left px-6 py-3 hover:bg-green-100 transition"
@@ -209,7 +209,7 @@ const openImage = (title, image) => {
                     @click="
                         openImage(
                             'Struktur Organisasi Dukuh Ploso',
-                            'images/Struktur Organisasi Dukuh Ploso fix.png',
+                            'images/Struktur Organisasi Dukuh Ploso.png',
                         )
                     "
                     class="block w-full text-left px-6 py-3 hover:bg-green-100 transition"
@@ -260,11 +260,13 @@ const openImage = (title, image) => {
                 {{ modalTitle }}
             </h2>
 
-            <img
-                :src="modalImage"
-                :alt="modalTitle"
-                class="w-full max-h-[75vh] object-contain rounded-lg"
-            />
+            <div class="overflow-auto max-h-[80vh]">
+                <img
+                    :src="modalImage"
+                    :alt="modalTitle"
+                    class="min-w-full object-contain rounded-lg cursor-zoom-in"
+                />
+            </div>
         </div>
     </div>
 </template>
@@ -278,5 +280,8 @@ const openImage = (title, image) => {
 .fade-leave-to {
     opacity: 0;
     transform: translateY(-10px);
+}
+img {
+    touch-action: pinch-zoom;
 }
 </style>
