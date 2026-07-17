@@ -45,8 +45,8 @@ const daftarRT = [
         ketua: "Bpk. Gandung Purwanto",
         kk: 22,
         deskripsi:
-            "Lokasi RT 09 berada di atas bukit dan dekat dengan masjid, sehingga memudahkan akses ke fasilitas umum",
-        foto: "/images/rt/rt1.jpg",
+            "Lokasi RT 09 berada di atas bukit dan dekat dengan masjid, sehingga memudahkan akses ke fasilitas umum. Rumah Pak RT berada di depan masjid",
+        foto: "images/Pemukiman RT 09.jpeg",
         show: false,
     },
     {
@@ -54,17 +54,16 @@ const daftarRT = [
         ketua: "Bpk. Jaka Triana",
         kk: 21,
         deskripsi:
-            "Lokasi RT 10 dekat dengan balai dukuh, masjid, dan sawah tegalan, sehingga memudahkan akses ke fasilitas umum",
-        foto: "images/RT 10.jpeg",
+            "Lokasi RT 10 dekat dengan balai dukuh, masjid, dan sawah tegalan, sehingga memudahkan akses ke fasilitas umum.",
+        foto: "images/Pemukiman RT 10.jpeg",
         show: false,
     },
     {
         nomor: "RT 11",
         ketua: "Bpk. Ali Bertus",
         kk: 24,
-        deskripsi:
-            "Lokasi RT 11 dekat dengan RT 10 dan sawah tegalan",
-        foto: "images/RT 11.jpeg",
+        deskripsi: "Lokasi RT 11 dekat dengan RT 10 dan sawah tegalan",
+        foto: "images/Pemukiman RT 11.jpeg",
         show: false,
     },
     {
@@ -73,7 +72,7 @@ const daftarRT = [
         kk: 23,
         deskripsi:
             "Lokasi RT 12 dekat dengan warung kebutuhan sehari-hari, sehingga memudahkan akses ke kebutuhan pokok",
-        foto: "images/RT 12.jpeg",
+        foto: "images/Pemukiman RT 12.jpeg",
         show: false,
     },
 ];
@@ -127,6 +126,10 @@ const dokumentasi = [
     {
         foto: "images/Kegiatan Ibu-Ibu PKK.jpeg",
         judul: "Kegiatan Ibu-Ibu PKK",
+    },
+    {
+        foto: "images/Ploso VC 2.jpeg",
+        judul: "Lomba Voli",
     },
 ];
 </script>
@@ -376,14 +379,16 @@ const dokumentasi = [
                                     class="w-[calc(50%-24px)] text-right pr-4 md:pr-10"
                                 >
                                     <h3 class="font-bold text-lg md:text-xl">
-                                        Tahun 1930-an
+                                        Tahun 1930 - 1947
                                     </h3>
 
                                     <p
                                         class="text-gray-600 mt-2 text-sm md:text-base"
                                     >
-                                        Mbah Pawirorejo menjadi kepala dukuh
-                                        pada masa penjajahan Belanda.
+                                        Jabatan Kepala Dukuh dijabat oleh
+                                        <span class="font-semibold"
+                                            >Mbah Mbantu</span
+                                        >.
                                     </p>
                                 </div>
 
@@ -391,23 +396,88 @@ const dokumentasi = [
                                 <div
                                     class="w-12 h-12 flex-shrink-0 rounded-full bg-green-600 text-white flex items-center justify-center z-10"
                                 >
-                                    🌳
+                                    👤
                                 </div>
 
                                 <!-- Spacer -->
                                 <div class="flex-1"></div>
                             </div>
 
+                            <!-- Kanan -->
+                            <div class="flex items-center">
+                                <div class="w-1/2"></div>
+
+                                <div
+                                    class="w-12 h-12 rounded-full bg-gray-500 text-white flex items-center justify-center z-10"
+                                >
+                                    ⏳
+                                </div>
+
+                                <div class="w-1/2 pl-10">
+                                    <h3 class="font-bold text-xl">
+                                        1947 – 1955
+                                    </h3>
+
+                                    <p class="text-gray-600 mt-2">
+                                        Pada periode ini jabatan Kepala Dukuh
+                                        mengalami kekosongan sebelum diangkat
+                                        kembali kepala dukuh berikutnya.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="w-1/2 text-right pr-10">
+                                    <h3 class="font-bold text-xl">
+                                        1956 – 1989
+                                    </h3>
+
+                                    <p class="text-gray-600 mt-2">
+                                        Jabatan Kepala Dukuh dijabat oleh
+                                        <span class="font-semibold"
+                                            >Mbah Pawirorejo</span
+                                        >.
+                                    </p>
+                                </div>
+
+                                <!-- Kiri -->
+                                <div
+                                    class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center z-10"
+                                >
+                                    👤
+                                </div>
+
+                                <div class="w-1/2"></div>
+                            </div>
                             <div class="flex items-center">
                                 <div class="w-1/2"></div>
 
                                 <div
                                     class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center z-10"
                                 >
-                                    🪓
+                                    🏛️
                                 </div>
 
                                 <div class="w-1/2 pl-10">
+                                    <h3 class="font-bold text-xl">
+                                        1990 – Sekarang
+                                    </h3>
+
+                                    <p class="text-gray-600 mt-2">
+                                        Jabatan Kepala Dukuh dijabat oleh
+                                        <span class="font-semibold"
+                                            >Pak Sumardi Hadi Pramono</span
+                                        >. Pada masa ini Dukuh Ploso terus
+                                        berkembang, baik dalam bidang
+                                        pembangunan maupun kehidupan sosial
+                                        masyarakat.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <!-- Kiri -->
+                                <div class="w-1/2 text-right pr-10">
                                     <h3 class="font-bold text-xl">
                                         Pembukaan Hutan
                                     </h3>
@@ -418,10 +488,31 @@ const dokumentasi = [
                                         pertanian.
                                     </p>
                                 </div>
-                            </div>
 
+                                <!-- Icon -->
+                                <div
+                                    class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center z-10"
+                                >
+                                    🪓
+                                </div>
+
+                                <!-- Spacer -->
+                                <div class="w-1/2"></div>
+                            </div>
+                            
                             <div class="flex items-center">
-                                <div class="w-1/2 text-right pr-10">
+                                <!-- Spacer -->
+                                <div class="w-1/2"></div>
+
+                                <!-- Icon -->
+                                <div
+                                    class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center z-10"
+                                >
+                                    🌲
+                                </div>
+
+                                <!-- Kanan -->
+                                <div class="w-1/2 pl-10">
                                     <h3 class="font-bold text-xl">
                                         Nama Dukuh
                                     </h3>
@@ -429,38 +520,6 @@ const dokumentasi = [
                                     <p class="text-gray-600 mt-2">
                                         Nama Ploso diambil dari "Pohon Ploso"
                                         yang banyak tumbuh di wilayah tersebut.
-                                    </p>
-                                </div>
-
-                                <div
-                                    class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center z-10"
-                                >
-                                    🌲
-                                </div>
-
-                                <div class="w-1/2"></div>
-                            </div>
-
-                            <div class="flex items-center">
-                                <div class="w-1/2"></div>
-
-                                <div
-                                    class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center z-10"
-                                >
-                                    🏡
-                                </div>
-
-                                <div class="w-1/2 pl-10">
-                                    <h3 class="font-bold text-xl">
-                                        Dukuh Saat Ini
-                                    </h3>
-
-                                    <p class="text-gray-600 mt-2">
-                                        Kepala dukuh saat ini adalah Pak Sumardi
-                                        Hadi Pramono. Dukuh Ploso berkembang
-                                        menjadi wilayah yang menjunjung tinggi
-                                        gotong royong serta menjadi kawasan
-                                        pertanian dan peternakan.
                                     </p>
                                 </div>
                             </div>
@@ -1309,8 +1368,8 @@ const dokumentasi = [
             </button>
 
             <img
-                src="images/Fotbar w Pak Dukuh.jpeg"
-                class="w-full h-72 object-cover"
+                src="images\Pak Dukuh Ploso.jpeg"
+                class="w-full max-h-[420px] object-contain mx-auto"
             />
 
             <div class="p-6">
